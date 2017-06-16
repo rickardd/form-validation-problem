@@ -2,11 +2,18 @@
 
 For the simplicity I've used vanilla javascript and jasmine to unitest my validations.
 
+```
+$ npm install
+$ npm test
+$ npm start
+http://localhost:8080/
+```
+
 ### Documentation
 
-  A documentation that's not up-to-date can be bad. Two tools I've used to make sure everything is documented and is up-to-date is KKS for css and jsDoc for javascript. They parse the code and creates a a styleguide based on your comments.
+  A documentation that's not up-to-date is bad. Two tools I've used to make sure everything is documented and up-to-date is KKS for css and jsDoc for javascript. They parse the code and creates a styleguide based on your comments. "living style guide"
 
-  Forms/form-fields are often used on a few different places in our apps. I would make sure html and css is well documented so everyone in the team know's what and how to impliment.
+  Forms/form-fields are often used in a few different places in our apps. I would make sure html and css is well documented so everyone in the team know's how to impliment it.
 
   Then I would create a set-up-guid for the javascript.
 
@@ -19,7 +26,7 @@ For the simplicity I've used vanilla javascript and jasmine to unitest my valida
   If a group of checkboxes is wrapped in a fieldset with a legend, the legend will be read with each checkbox for some screen readers e.g Jaws or NVDA. [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form). But doesn't work with apples build in tool "voice over"
 
   ***autofucus***
-  Autofocus on first form-field to save the user on click.
+  Autofocus on first form-field to save the user a click.
 
   ***inpute-types***
   Setting right inpute-type ``<input type="">``  will pick the right keyboard for mobile-devices. e.g email, number, date.
@@ -33,34 +40,33 @@ For the simplicity I've used vanilla javascript and jasmine to unitest my valida
   Javascript can read and append require-validation
 
   ***datalist***
-  Maybe a datalist could be to considered for the example of tiger. The input-field would be in with the same component as the options-list. It would need the multiple property.
+  Maybe a datalist could be to considered for the example of tiger_type to give the user some predefined options.
 
   ***Styling***
-  Since these HTML5 properties has native behaviour which may not be desired style. They has to be overwritten with css.
+  Since these HTML5 properties has native behavior which may not be desired style. They has to be overwritten with css.
+
+  ***Wai-aria***
+  Since the components in this form is native, fields has labels etc, it's not much wai-aria needed. But as the form evolves, the components might have design requirements which requires use of other attributes. Adding Wai-aria attributes would be necessary.
 
   ***To not mention UI***
-  The user could get instant feedback rather than wait for error untill hitting submit. Email and password could be green or get a tick as soon as they are correct. The typeTiger could be hidden or disabled if the tiger checkbox is not ticked. The user at this stage doesn't know which fields are required or not. Also error messages, why is a field not valid? e.g password-field could say "minimun 8 charactes and 2 capital letters".
+  The user could get instant feedback rather than wait for error until hitting submit. Email and password could be green or get a tick as soon as they are correct. The typeTiger could be hidden or disabled if the tiger checkbox is not ticked. The user at this stage doesn't know which fields are required or not. Also error messages, why is a field not valid? e.g password-field could say "minimum 8 characters and 2 capital letters".
 
 ### Progressive enhancement
 
-  Depending on requirements it's probably parts that needs to be refacored. Maybe passing in the elements to the form class and make it more generic.
+  Depending on requirements it's probably parts that needs to be re-factored. Maybe passing in the elements to the form class to make it more generic.
 
   Some parts can probably do with some refactoring so they are easier to test.
 
 ### Browser support
 
-  This example is quite simple so I could saftly use vanilla javascript. Depending on structure and requirements I would think like this.
+  This example is quite simple so I could safely use vanilla javascript. Depending on structure and requirements I would think like this.
 
-  - jQuery is still great although I think it's starting to lose value with better browsers and new modern framewords.
-
-  - ***Angular2:*** Comes with many tools such as http, observables, webpack, typscript, babel and so on. Also it's using databinding instead of DOM-manipulation. This makes it quite safe to write modern vanilla js without jQuery.
-
-
+  If the project grows with ajax and more complex structure I would use e.g react, angular2 or jquery.
 
 
 ### Testing
 
-  I've used jasmin for unit test the validation rules. If I had time I would test error-classes and submition as well.
+  I've used jasmine for unit test the validation rules. If I had time I would test error-classes and submission as well.
 
 ### Tooling
 
@@ -68,7 +74,7 @@ For the simplicity I've used vanilla javascript and jasmine to unitest my valida
 
   More tools that could be helpful is frameworks/libraries such as react, angular2. Preprosessor for css. A validation library. jsHint, mocha, karma, kss, jsDoc and so on...
 
-  Angular2: Has a component structure that isolatets css. I actually less and less feel I need a pre compressor since the css get's more simple and small for each component. Also livereload in the browser can inject the style change rather than refreshing the page. This makes the development faster.
+  Angular2: Has a component structure that isolates css. I actually less and less feel I need a pre-compressor since the css get's more simple and small for each component. Also live-reload in the browser can inject the style change rather than refreshing the page. This makes the development faster.
 
 
 
